@@ -1,0 +1,647 @@
+{
+    "type": "extension",
+    "id": "com.mindscapesolutions.blog",
+    "version": "1.0",
+    "revision": 1,
+    "compatibility": "4.2+",
+    "title": "Mindscape Blog",
+    "description": "Blog extension supporting multiple blogs, authors and categories.",
+    "keywords": [
+        "blog"
+    ],
+    "author": {
+        "name": "MINDSCAPE Solutions",
+        "url": "https://mindscapesolutions.com",
+        "email": "programmers@mindscapesolutions.com"
+    },
+    "licenses": {
+        "MIT": "http://opensource.org/licenses/MIT"
+    },
+    "components": {
+        "module_groups": [
+            {
+                "id": "1",
+                "name": "Blog",
+                "route": "blog",
+                "position": "0",
+                "extension": null
+            }
+        ],
+        "modules": [
+            {
+                "id": "1",
+                "group": "1",
+                "name": "Blog Category",
+                "route": "blog-category",
+                "class": "BlogCategory",
+                "icon": "category",
+                "gbp": {
+                    "name": "",
+                    "table": "",
+                    "item_parser": "",
+                    "other_table": ""
+                },
+                "position": "1",
+                "extension": null,
+                "actions": [
+                    {
+                        "id": "1",
+                        "module": "1",
+                        "name": "View Blog Categories",
+                        "route": "",
+                        "in_nav": "on",
+                        "form": null,
+                        "view": "1",
+                        "report": null,
+                        "class": "list",
+                        "level": "0",
+                        "position": "0"
+                    },
+                    {
+                        "id": "2",
+                        "module": "1",
+                        "name": "Add Blog Category",
+                        "route": "add",
+                        "in_nav": "on",
+                        "form": "1",
+                        "view": null,
+                        "report": null,
+                        "class": "add",
+                        "level": "0",
+                        "position": "0"
+                    },
+                    {
+                        "id": "3",
+                        "module": "1",
+                        "name": "Edit Blog Category",
+                        "route": "edit",
+                        "in_nav": "",
+                        "form": "1",
+                        "view": null,
+                        "report": null,
+                        "class": "edit",
+                        "level": "0",
+                        "position": "0"
+                    }
+                ],
+                "views": [
+                    {
+                        "id": "1",
+                        "module": "1",
+                        "title": "Blog Categories",
+                        "description": "",
+                        "type": "searchable",
+                        "table": "blog_categories",
+                        "fields": {
+                            "title": {
+                                "width": "788",
+                                "title": "Title",
+                                "parser": "",
+                                "numeric": false
+                            }
+                        },
+                        "options": [
+
+                        ],
+                        "actions": {
+                            "edit": "on",
+                            "delete": "on"
+                        },
+                        "preview_url": "",
+                        "related_form": null
+                    }
+                ],
+                "forms": [
+                    {
+                        "id": "1",
+                        "module": "1",
+                        "title": "Blog Category",
+                        "table": "blog_categories",
+                        "fields": [
+                            {
+                                "title": "Title",
+                                "subtitle": "",
+                                "type": "text",
+                                "options": {
+                                    "validation": "required",
+                                    "sub_type": "",
+                                    "max_length": ""
+                                },
+                                "column": "title"
+                            }
+                        ],
+                        "default_position": "",
+                        "return_view": null,
+                        "return_url": "",
+                        "tagging": "",
+                        "hooks": [
+
+                        ]
+                    }
+                ],
+                "embed_forms": [
+
+                ],
+                "reports": [
+
+                ]
+            },
+            {
+                "id": "2",
+                "group": "1",
+                "name": "Blog Author",
+                "route": "blog-author",
+                "class": "BlogAuthor",
+                "icon": "user",
+                "gbp": {
+                    "name": "",
+                    "table": "",
+                    "item_parser": "",
+                    "other_table": ""
+                },
+                "position": "2",
+                "extension": null,
+                "actions": [
+                    {
+                        "id": "4",
+                        "module": "2",
+                        "name": "View Blog Authors",
+                        "route": "",
+                        "in_nav": "on",
+                        "form": null,
+                        "view": "2",
+                        "report": null,
+                        "class": "list",
+                        "level": "0",
+                        "position": "0"
+                    },
+                    {
+                        "id": "5",
+                        "module": "2",
+                        "name": "Add Blog Author",
+                        "route": "add",
+                        "in_nav": "on",
+                        "form": "2",
+                        "view": null,
+                        "report": null,
+                        "class": "add",
+                        "level": "0",
+                        "position": "0"
+                    },
+                    {
+                        "id": "6",
+                        "module": "2",
+                        "name": "Edit Blog Author",
+                        "route": "edit",
+                        "in_nav": "",
+                        "form": "2",
+                        "view": null,
+                        "report": null,
+                        "class": "edit",
+                        "level": "0",
+                        "position": "0"
+                    }
+                ],
+                "views": [
+                    {
+                        "id": "2",
+                        "module": "2",
+                        "title": "Blog Authors",
+                        "description": "",
+                        "type": "searchable",
+                        "table": "blog_authors",
+                        "fields": {
+                            "last_name": {
+                                "title": "Last Name",
+                                "parser": "",
+                                "width": 384,
+                                "numeric": false
+                            },
+                            "first_name": {
+                                "title": "First Name",
+                                "parser": "",
+                                "width": 384,
+                                "numeric": false
+                            }
+                        },
+                        "options": [
+
+                        ],
+                        "actions": {
+                            "edit": "on",
+                            "delete": "on"
+                        },
+                        "preview_url": "",
+                        "related_form": null
+                    }
+                ],
+                "forms": [
+                    {
+                        "id": "2",
+                        "module": "2",
+                        "title": "Blog Author",
+                        "table": "blog_authors",
+                        "fields": [
+                            {
+                                "title": "Last Name",
+                                "subtitle": "",
+                                "type": "text",
+                                "options": {
+                                    "validation": "required",
+                                    "sub_type": "",
+                                    "max_length": ""
+                                },
+                                "column": "last_name"
+                            },
+                            {
+                                "title": "First Name",
+                                "subtitle": "",
+                                "type": "text",
+                                "options": {
+                                    "validation": "required",
+                                    "sub_type": "",
+                                    "max_length": ""
+                                },
+                                "column": "first_name"
+                            },
+                            {
+                                "title": "Image",
+                                "subtitle": "",
+                                "type": "upload",
+                                "options": {
+                                    "image": "on"
+                                },
+                                "column": "image"
+                            }
+                        ],
+                        "default_position": "",
+                        "return_view": null,
+                        "return_url": "",
+                        "tagging": "",
+                        "hooks": [
+
+                        ]
+                    }
+                ],
+                "embed_forms": [
+
+                ],
+                "reports": [
+
+                ]
+            },
+            {
+                "id": "3",
+                "group": "1",
+                "name": "Blog Post",
+                "route": "blog-post",
+                "class": "BlogPost",
+                "icon": "blog",
+                "gbp": {
+                    "name": "",
+                    "table": "",
+                    "item_parser": "",
+                    "other_table": ""
+                },
+                "position": "3",
+                "extension": null,
+                "actions": [
+                    {
+                        "id": "7",
+                        "module": "3",
+                        "name": "View Blog Posts",
+                        "route": "",
+                        "in_nav": "on",
+                        "form": null,
+                        "view": "3",
+                        "report": null,
+                        "class": "list",
+                        "level": "0",
+                        "position": "0"
+                    },
+                    {
+                        "id": "8",
+                        "module": "3",
+                        "name": "Add Blog Post",
+                        "route": "add",
+                        "in_nav": "on",
+                        "form": "3",
+                        "view": null,
+                        "report": null,
+                        "class": "add",
+                        "level": "0",
+                        "position": "0"
+                    },
+                    {
+                        "id": "9",
+                        "module": "3",
+                        "name": "Edit Blog Post",
+                        "route": "edit",
+                        "in_nav": "",
+                        "form": "3",
+                        "view": null,
+                        "report": null,
+                        "class": "edit",
+                        "level": "0",
+                        "position": "0"
+                    }
+                ],
+                "views": [
+                    {
+                        "id": "3",
+                        "module": "3",
+                        "title": "Blog Posts",
+                        "description": "",
+                        "type": "searchable",
+                        "table": "blog_posts",
+                        "fields": {
+                            "blog_id": {
+                                "title": "Blog Id",
+                                "parser": "",
+                                "width": 249,
+                                "numeric": true
+                            },
+                            "title": {
+                                "title": "Title",
+                                "parser": "",
+                                "width": 249,
+                                "numeric": false
+                            },
+                            "original_post_date": {
+                                "title": "Original Post Date",
+                                "parser": "",
+                                "width": 249,
+                                "numeric": false
+                            }
+                        },
+                        "options": [
+
+                        ],
+                        "actions": {
+                            "edit": "on",
+                            "delete": "on"
+                        },
+                        "preview_url": "",
+                        "related_form": null
+                    }
+                ],
+                "forms": [
+                    {
+                        "id": "3",
+                        "module": "3",
+                        "title": "Blog Post",
+                        "table": "blog_posts",
+                        "fields": [
+                            {
+                                "title": "Blog",
+                                "subtitle": "",
+                                "type": "list",
+                                "options": {
+                                    "list_type": "db",
+                                    "allow-empty": "No",
+                                    "pop-table": "blogs",
+                                    "pop-description": "title",
+                                    "pop-sort": "`title` ASC",
+                                    "parser": ""
+                                },
+                                "column": "blog_id"
+                            },
+                            {
+                                "title": "Title",
+                                "subtitle": "",
+                                "type": "text",
+                                "options": {
+                                    "validation": "required",
+                                    "sub_type": "",
+                                    "max_length": ""
+                                },
+                                "column": "title"
+                            },
+                            {
+                                "title": "Summary",
+                                "subtitle": "",
+                                "type": "html",
+                                "options": [
+
+                                ],
+                                "column": "summary"
+                            },
+                            {
+                                "title": "Content",
+                                "subtitle": "",
+                                "type": "html",
+                                "options": {
+                                    "validation": "required",
+                                    "simple_by_permission": "0"
+                                },
+                                "column": "content"
+                            },
+                            {
+                                "title": "Feature Image",
+                                "subtitle": "",
+                                "type": "upload",
+                                "options": {
+                                    "directory": "files/modules/",
+                                    "image": "on",
+                                    "min_width": "",
+                                    "min_height": "",
+                                    "preview_prefix": ""
+                                },
+                                "column": "feature_image"
+                            },
+                            {
+                                "title": "Original Post Date",
+                                "subtitle": "",
+                                "type": "datetime",
+                                "options": {
+                                    "default_now": "on"
+                                },
+                                "column": "original_post_date"
+                            },
+                            {
+                                "title": "Categories",
+                                "subtitle": "",
+                                "type": "many-to-many",
+                                "options": {
+                                    "mtm-connecting-table": "blog_posts_in_categories",
+                                    "mtm-my-id": "blog_post_id",
+                                    "mtm-other-id": "blog_category_id",
+                                    "mtm-other-table": "blog_categories",
+                                    "mtm-other-descriptor": "title",
+                                    "mtm-sort": "`title` ASC",
+                                    "mtm-list-parser": ""
+                                },
+                                "column": "__mtm-1__"
+                            }
+                        ],
+                        "default_position": "",
+                        "return_view": null,
+                        "return_url": "",
+                        "tagging": "",
+                        "hooks": [
+
+                        ]
+                    }
+                ],
+                "embed_forms": [
+
+                ],
+                "reports": [
+
+                ]
+            },
+            {
+                "id": "4",
+                "group": "1",
+                "name": "Blog",
+                "route": "blog",
+                "class": "Blog",
+                "icon": "blog",
+                "gbp": {
+                    "name": "",
+                    "table": "",
+                    "item_parser": "",
+                    "other_table": ""
+                },
+                "position": "4",
+                "extension": null,
+                "actions": [
+                    {
+                        "id": "10",
+                        "module": "4",
+                        "name": "View Blogs",
+                        "route": "",
+                        "in_nav": "on",
+                        "form": null,
+                        "view": "4",
+                        "report": null,
+                        "class": "list",
+                        "level": "0",
+                        "position": "0"
+                    },
+                    {
+                        "id": "11",
+                        "module": "4",
+                        "name": "Add Blog",
+                        "route": "add",
+                        "in_nav": "on",
+                        "form": "4",
+                        "view": null,
+                        "report": null,
+                        "class": "add",
+                        "level": "0",
+                        "position": "0"
+                    },
+                    {
+                        "id": "12",
+                        "module": "4",
+                        "name": "Edit Blog",
+                        "route": "edit",
+                        "in_nav": "",
+                        "form": "4",
+                        "view": null,
+                        "report": null,
+                        "class": "edit",
+                        "level": "0",
+                        "position": "0"
+                    }
+                ],
+                "views": [
+                    {
+                        "id": "4",
+                        "module": "4",
+                        "title": "Blogs",
+                        "description": "",
+                        "type": "searchable",
+                        "table": "blogs",
+                        "fields": {
+                            "title": {
+                                "title": "Title",
+                                "parser": "",
+                                "width": 788,
+                                "numeric": false
+                            }
+                        },
+                        "options": [
+
+                        ],
+                        "actions": {
+                            "edit": "on",
+                            "delete": "on"
+                        },
+                        "preview_url": "",
+                        "related_form": null
+                    }
+                ],
+                "forms": [
+                    {
+                        "id": "4",
+                        "module": "4",
+                        "title": "Blog",
+                        "table": "blogs",
+                        "fields": [
+                            {
+                                "title": "Title",
+                                "subtitle": "",
+                                "type": "text",
+                                "options": [
+
+                                ],
+                                "column": "title"
+                            },
+                            {
+                                "title": "Blog Author",
+                                "subtitle": "",
+                                "type": "list",
+                                "options": {
+                                    "list_type": "db",
+                                    "allow-empty": "No",
+                                    "pop-table": "blog_authors",
+                                    "pop-description": "last_name",
+                                    "pop-sort": "`last_name` ASC",
+                                    "parser": "BlogAuthor::GetAllNames"
+                                },
+                                "column": "blog_author_id"
+                            }
+                        ],
+                        "default_position": "",
+                        "return_view": null,
+                        "return_url": "",
+                        "tagging": "",
+                        "hooks": [
+
+                        ]
+                    }
+                ],
+                "embed_forms": [
+
+                ],
+                "reports": [
+
+                ]
+            }
+        ],
+        "templates": [
+
+        ],
+        "callouts": [
+
+        ],
+        "settings": [
+
+        ],
+        "feeds": [
+
+        ],
+        "field_types": [
+
+        ],
+        "tables": {
+            "blog_authors": "CREATE TABLE `blog_authors` (   `id` int(11) NOT NULL AUTO_INCREMENT,   `last_name` varchar(32) DEFAULT NULL,   `first_name` varchar(32) DEFAULT NULL,   `image` varchar(255) DEFAULT NULL,   PRIMARY KEY (`id`) ) ENGINE=InnoDB DEFAULT CHARSET=latin1",
+            "blog_categories": "CREATE TABLE `blog_categories` (   `id` int(11) NOT NULL AUTO_INCREMENT,   `title` varchar(128) DEFAULT NULL,   PRIMARY KEY (`id`) ) ENGINE=InnoDB DEFAULT CHARSET=latin1",
+            "blog_posts": "CREATE TABLE `blog_posts` (   `id` int(11) NOT NULL AUTO_INCREMENT,   `blog_id` int(11) DEFAULT NULL,   `title` varchar(128) DEFAULT NULL,   `summary` text,   `content` text,   `feature_image` varchar(255) DEFAULT NULL,   `original_post_date` datetime DEFAULT NULL,   PRIMARY KEY (`id`) ) ENGINE=InnoDB DEFAULT CHARSET=latin1",
+            "blogs": "CREATE TABLE `blogs` (   `id` int(11) NOT NULL AUTO_INCREMENT,   `title` varchar(128) DEFAULT NULL,   `blog_author_id` int(11) DEFAULT NULL,   PRIMARY KEY (`id`) ) ENGINE=InnoDB DEFAULT CHARSET=latin1",
+            "blog_posts_in_categories": "CREATE TABLE `blog_posts_in_categories` (   `id` int(11) NOT NULL AUTO_INCREMENT,   `blog_post_id` int(11) DEFAULT NULL,   `blog_category_id` int(11) DEFAULT NULL,   PRIMARY KEY (`id`) ) ENGINE=InnoDB DEFAULT CHARSET=latin1"
+        }
+    }
+}
