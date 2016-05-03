@@ -1,7 +1,7 @@
 {
     "type": "extension",
     "id": "com.mindscapesolutions.blog",
-    "version": "1.0",
+    "version": "1.1",
     "revision": 1,
     "compatibility": "4.2+",
     "title": "Mindscape Blog",
@@ -622,7 +622,41 @@
             }
         ],
         "templates": [
-
+            {
+                "id": "com.mindscapesolutions.blog*blog-listing",
+                "name": "Blog Listing",
+                "routed": "",
+                "resources": [],
+                "module": "0",
+                "level": "0",
+                "position": "0",
+                "extension": "com.mindscapesolutions.blog"
+            },
+            {
+                "id": "com.mindscapesolutions.blog*blog",
+                "name": "Blog",
+                "routed": "on",
+                "resources": [
+                    {
+                        "id": "blogId",
+                        "title": "Blog",
+                        "subtitle": "",
+                        "type": "list",
+                        "options": {
+                            "list_type": "db",
+                            "allow-empty": "No",
+                            "pop-table": "blogs",
+                            "pop-description": "title",
+                            "pop-sort": "`title` ASC",
+                            "parser": ""
+                        }
+                    }
+                ],
+                "module": "0",
+                "level": "0",
+                "position": "0",
+                "extension": "com.mindscapesolutions.blog"
+            }
         ],
         "callouts": [
 
