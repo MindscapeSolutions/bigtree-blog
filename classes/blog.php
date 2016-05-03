@@ -103,6 +103,8 @@
             while ($f = sqlfetch($result)) {
                 if (BigTreeCMS::urlify($f["title"]) == $title) {
                     $post["post"] = $f;
+
+                    $post["post"]["feature_image"] = BlogPost::makeImageAbsolute($post["post"]["feature_image"]);
                     break;
                 }
             }

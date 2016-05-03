@@ -125,6 +125,15 @@ switch (count($bigtree["commands"])) {
 
         </p>
 
+<?
+    if (!empty($post["post"]["feature_image"])) {
+?>
+
+        <p><img src="<?= $post["post"]["feature_image"] ?>" /></p>
+<?
+    }
+?>
+
         <p><?= $post["post"]["content"] ?></p>
     </div> <!-- post-detail -->
 
