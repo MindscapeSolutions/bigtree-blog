@@ -54,17 +54,20 @@ foreach ($blog->getPostsExtended() as $postCounter => $post) {
 <?
     }
 
+    $readMoreLabel = BigTreeAdmin::getSetting("com.mindscapesolutions.blog*read-more-label")["value"];
+    $readMoreLabel = !empty($readMoreLabel) ? $readMoreLabel : "Read More";
+
     if ($blogCount < 2) {
 ?>
     
-        <p><a href="<?= WWW_ROOT ?>blog/<?= BigTreeCMS::urlify($post["post"]["title"]) ?>">Read More</a></p>
+        <p><a href="<?= WWW_ROOT ?>blog/<?= BigTreeCMS::urlify($post["post"]["title"]) ?>"><?= $readMoreLabel ?></a></p>
 
 <?
     }
     else {
 ?>
 
-        <p><a href="<?= WWW_ROOT ?>blog/<?= BigTreeCMS::urlify($blog->record["title"]) ?>/<?= BigTreeCMS::urlify($post["post"]["title"]) ?>">Read More</a></p>
+        <p><a href="<?= WWW_ROOT ?>blog/<?= BigTreeCMS::urlify($blog->record["title"]) ?>/<?= BigTreeCMS::urlify($post["post"]["title"]) ?>"><?= $readMoreLabel ?></a></p>
 
 <?
     }

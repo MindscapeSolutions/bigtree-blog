@@ -662,7 +662,18 @@
 
         ],
         "settings": [
-
+            {
+                "id": "com.mindscapesolutions.blog*read-more-label",
+                "value": "Read More",
+                "type": "text",
+                "options": "",
+                "name": "Blog - Read More Label",
+                "description": "Enter the label for the Read More link, shown beneath each blog post in a listing view.",
+                "locked": "",
+                "system": "",
+                "encrypted": "",
+                "extension": "com.mindscapesolutions.blog"
+            }
         ],
         "feeds": [
 
