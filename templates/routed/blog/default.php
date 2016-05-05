@@ -47,9 +47,16 @@ foreach ($blog->getPostsExtended() as $postCounter => $post) {
 <?
     }
     else {
+        $truncateCount = BigTreeAdmin::getSetting("com.mindscapesolutions.blog*summary-truncate")["value"];
+        if (empty($truncateCount)) {
+            $truncateCount = 100;
+        }
+        else {
+            $truncateCount = intval($truncateCount);
+        }
 ?>
 
-        <p><?= substr(strip_tags($post["post"]["content"]), 0, 4) . " ..." ?></p>
+        <p><?= substr(strip_tags($post["post"]["content"]), 0, $truncateCount) . " ..." ?></p>
 
 <?
     }

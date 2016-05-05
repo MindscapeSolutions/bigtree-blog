@@ -673,6 +673,18 @@
                 "system": "",
                 "encrypted": "",
                 "extension": "com.mindscapesolutions.blog"
+            },
+            {
+                "id": "com.mindscapesolutions.blog*summary-truncate",
+                "value": "100",
+                "type": "text",
+                "options": "",
+                "name": "Blog - Auto Truncate",
+                "description": "Enter the number of characters to limit a blog post to in a listing view, if you do not provide a summary.",
+                "locked": "",
+                "system": "",
+                "encrypted": "",
+                "extension": "com.mindscapesolutions.blog"
             }
         ],
         "feeds": [
