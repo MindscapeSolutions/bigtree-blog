@@ -14,5 +14,23 @@
             return $categories;
         }
 
+        public static function remove($categoryId) {
+            $categoryId = intval($categoryId);
+
+            $cResult = sqlquery("delete from blog_posts_in_categories where blog_category_id = $categoryId");
+
+            if (!$cResult) {
+                return false;
+            }
+
+            $result = sqlquery("delete from blog_categories where id = $categoryId");
+            $cResult = sqlquery("delete from bigtree_module_view_cache");
+
+            if (!$result) {
+                return false;
+            }
+
+            return true;
+        }
 	}
 ?>

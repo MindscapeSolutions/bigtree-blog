@@ -105,7 +105,7 @@
                         ],
                         "actions": {
                             "edit": "on",
-                            "delete": "on"
+                            "remove": "{\"name\":\"Remove\",\"class\":\"icon_delete\",\"route\":\"remove-category\",\"function\":\"\"}"
                         },
                         "preview_url": "",
                         "related_form": null
@@ -379,7 +379,7 @@
                         ],
                         "actions": {
                             "edit": "on",
-                            "delete": "on"
+                            "remove": "{\"name\":\"Remove\",\"class\":\"icon_delete\",\"route\":\"remove-post\",\"function\":\"\"}"
                         },
                         "preview_url": "",
                         "related_form": null

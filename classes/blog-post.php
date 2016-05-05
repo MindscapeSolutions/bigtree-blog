@@ -7,5 +7,24 @@
 
             return $newUrl;
         }
+
+        public static function remove($postId) {
+            $postId = intval($postId);
+
+            $cResult = sqlquery("delete from blog_posts_in_categories where blog_post_id = $postId");
+
+            if (!$cResult) {
+                return false;
+            }
+
+            $result = sqlquery("delete from blog_posts where id = $postId");
+            $cResult = sqlquery("delete from bigtree_module_view_cache");
+
+            if (!$result) {
+                return false;
+            }
+
+            return true;
+        }
 	}
 ?>
