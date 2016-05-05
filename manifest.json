@@ -229,7 +229,7 @@
                         ],
                         "actions": {
                             "edit": "on",
-                            "delete": "on"
+                            "remove": "{\"name\":\"Remove\",\"class\":\"icon_delete\",\"route\":\"remove-author\",\"function\":\"\"}"
                         },
                         "preview_url": "",
                         "related_form": null

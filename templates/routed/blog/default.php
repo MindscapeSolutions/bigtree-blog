@@ -3,7 +3,7 @@ $blogCount = Blog::getTotalBlogs();
 
 switch (count($bigtree["commands"])) {
     case 0:
-        // blog listing
+        // blog post listing
         $blog = new Blog($blogId);
 ?>
 
